@@ -38,7 +38,7 @@ void editProfile_here(string username, string password)
             std::cout << "Error opening file." << std::endl;
         }
 
-        std::ofstream output_file("data/temp.csv"); // Temporary file for writing
+        std::ofstream output_file("data/temp.csv");
 
         std::string line;
         while (std::getline(input_file, line))
@@ -46,21 +46,19 @@ void editProfile_here(string username, string password)
             std::string token = line.substr(0, line.find(','));
             if (token == username)
             {
-                output_file << new_username << "," << password << "\n"; // Write updated data to temporary file
+                output_file << new_username << "," << password << "\n";
             }
             else
             {
-                output_file << line << "\n"; // Copy unchanged data to temporary file
+                output_file << line << "\n";
             }
         }
 
         std::cout<<ANSI_COLOR_GREEN<<"Username has been updated sucessfully \n"<<ANSI_COLOR_RESET;
 
-        // Close both input and output files
         input_file.close();
         output_file.close();
 
-        // Remove the original file and rename the temporary file
         if (std::remove("data/members.csv") != 0)
         {
             std::cout << "Error deleting file." << std::endl;
@@ -113,7 +111,7 @@ void editProfile_here(string username, string password)
                 std::cout << "Error opening file." << std::endl;
             }
 
-            std::ofstream output_file("data/temp.csv"); // Temporary file for writing
+            std::ofstream output_file("data/temp.csv");
 
             std::string line;
             while (std::getline(input_file, line))
@@ -121,19 +119,17 @@ void editProfile_here(string username, string password)
                 std::string token = line.substr(0, line.find(','));
                 if (token == username)
                 {
-                    output_file << username << "," << new_password << "\n"; // Write updated data to temporary file
+                    output_file << username << "," << new_password << "\n";
                 }
                 else
                 {
-                    output_file << line << "\n"; // Copy unchanged data to temporary file
+                    output_file << line << "\n";
                 }
             }
 
-            // Close both input and output files
             input_file.close();
             output_file.close();
 
-            // Remove the original file and rename the temporary file
             if (std::remove("data/members.csv") != 0)
             {
                 std::cout << "Error deleting file." << std::endl;
