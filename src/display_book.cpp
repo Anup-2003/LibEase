@@ -19,7 +19,7 @@ void Book::displayBooks()
     std::cout << ANSI_COLOR_GREEN "-----------Library Management System-----------\n";
     std::cout << "\n------------------Display Books------------------\n" ANSI_COLOR_RESET;
 
-    std::ifstream file("../data/books.csv");
+    std::ifstream file("data/books.csv");
     if (!file.is_open())
     {
         std::cout << ANSI_COLOR_RED "Error opening file.\n" ANSI_COLOR_RESET;

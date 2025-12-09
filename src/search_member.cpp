@@ -17,7 +17,7 @@ void User::searchMember()
 
     std::string key;
     int flag = 0;
-    std::ifstream file("../data/members.csv");
+    std::ifstream file("data/members.csv");
     if (!file.is_open())
     {
         std::cout << ANSI_COLOR_RED "Error opening file.\n" ANSI_COLOR_RESET;

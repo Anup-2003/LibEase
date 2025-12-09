@@ -30,11 +30,11 @@ void Book::addBook()
     std::cout << "Enter the book YEAR: ";
     std::cin >> book.year;
 
-    unsigned int lastId = getLastBookID("../data/books.csv");
+    unsigned int lastId = getLastBookID("data/books.csv");
     book.id = lastId + 1;
     book.isBorrow = false;
 
-    std::ofstream file("../data/books.csv", std::ios::app);
+    std::ofstream file("data/books.csv", std::ios::app);
     if (!file.is_open())
     {
         std::cerr << "Error opening file." << std::endl;

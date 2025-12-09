@@ -21,7 +21,7 @@ void Book::searchBook()
     Book book(0, "", "", 0, false);
     unsigned int borrowInt;
 
-    std::ifstream file("../data/books.csv");
+    std::ifstream file("data/books.csv");
     if (!file.is_open())
     {
         std::cout << ANSI_COLOR_RED "Error opening file.\n" ANSI_COLOR_RESET;

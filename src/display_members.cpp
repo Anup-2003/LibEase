@@ -15,7 +15,7 @@ void User::displayMembers()
     std::cout << ANSI_COLOR_GREEN "-----------Library Management System-----------\n";
     std::cout << "\n------------------Display Members------------------\n";
 
-    std::ifstream file("../data/members.csv");
+    std::ifstream file("data/members.csv");
     if (!file.is_open())
     {
         std::cout << ANSI_COLOR_RED "Error opening file.\n" ANSI_COLOR_RESET;

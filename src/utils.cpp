@@ -14,7 +14,7 @@
 
 void clearScreen()
 {
-   system("clear");
+   system("cls");
 }
 
 
@@ -38,7 +38,7 @@ void printBanner()
     cout << " #######  " << "  #  " << " #######  " << "  ####### " << "  ###### " << " ######   " << "  ###### " << endl;
 
     cout << COLOR_BLUE <<  "                          Lib Ease    \n"<< COLOR_RESET
-              << COLOR_RED "--------------- Developed by Sangam Kumar ---------------\n"
+              << COLOR_RED "--------------- Developed by Anup Gupta ---------------\n"
               << COLOR_RESET;
 
 }

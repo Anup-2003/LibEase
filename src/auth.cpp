@@ -34,7 +34,7 @@ void User::addUser(std::string &name, std::string &password)
     name = name;
     password = password;
 
-    std::ofstream file("../data/members.csv", std::ios::app);
+    std::ofstream file("data/members.csv", std::ios::app);
     if (file.is_open())
     {
         file << name << "," << password << "\n";

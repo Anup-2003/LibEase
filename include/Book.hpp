@@ -28,14 +28,14 @@ public:
     static int updateBookStatus(int id, int newStatus)
     {
         int flag = 0;
-        std::ifstream file_in("../data/books.csv");
+        std::ifstream file_in("data/books.csv");
         if (!file_in.is_open())
         {
             std::cout << "Error opening file." << std::endl;
             return -1;
         }
 
-        std::ofstream temp_out("../data/temp.csv");
+        std::ofstream temp_out("data/temp.csv");
         if (!temp_out.is_open())
         {
             std::cout << "Error creating temporary file." << std::endl;
@@ -74,13 +74,13 @@ public:
         file_in.close();
         temp_out.close();
 
-        if (std::remove("../data/books.csv") != 0)
+        if (std::remove("data/books.csv") != 0)
         {
             std::cout << "Error deleting original file. Try changing permission of data using 'mingw32-make change-permission-win' command" << std::endl;
             return -1;
         }
 
-        if (std::rename("../data/temp.csv", "../data/books.csv") != 0)
+        if (std::rename("data/temp.csv", "data/books.csv") != 0)
         {
             std::cout << "Error renaming temporary file. Try changing permission of data using 'mingw32-make change-permission-win'" << std::endl;
             return -1;

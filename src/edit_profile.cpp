@@ -32,13 +32,13 @@ void editProfile_here(string username, string password)
         std::getline(std::cin,new_username);
         replaceSpacesWithDashes(new_username);
 
-        std::ifstream input_file("../data/members.csv");
+        std::ifstream input_file("data/members.csv");
         if (!input_file.is_open())
         {
             std::cout << "Error opening file." << std::endl;
         }
 
-        std::ofstream output_file("../data/temp.csv"); // Temporary file for writing
+        std::ofstream output_file("data/temp.csv"); // Temporary file for writing
 
         std::string line;
         while (std::getline(input_file, line))
@@ -61,11 +61,11 @@ void editProfile_here(string username, string password)
         output_file.close();
 
         // Remove the original file and rename the temporary file
-        if (std::remove("../data/members.csv") != 0)
+        if (std::remove("data/members.csv") != 0)
         {
             std::cout << "Error deleting file." << std::endl;
         }
-        if (std::rename("../data/temp.csv", "../data/members.csv") != 0)
+        if (std::rename("data/temp.csv", "data/members.csv") != 0)
         {
             std::cout << "Error renaming file." << std::endl;
         }
@@ -107,13 +107,13 @@ void editProfile_here(string username, string password)
         {
             rot13algorithm(new_password);
 
-            std::ifstream input_file("../data/members.csv");
+            std::ifstream input_file("data/members.csv");
             if (!input_file.is_open())
             {
                 std::cout << "Error opening file." << std::endl;
             }
 
-            std::ofstream output_file("../data/temp.csv"); // Temporary file for writing
+            std::ofstream output_file("data/temp.csv"); // Temporary file for writing
 
             std::string line;
             while (std::getline(input_file, line))
@@ -134,11 +134,11 @@ void editProfile_here(string username, string password)
             output_file.close();
 
             // Remove the original file and rename the temporary file
-            if (std::remove("../data/members.csv") != 0)
+            if (std::remove("data/members.csv") != 0)
             {
                 std::cout << "Error deleting file." << std::endl;
             }
-            if (std::rename("../data/temp.csv", "../data/members.csv") != 0)
+            if (std::rename("data/temp.csv", "data/members.csv") != 0)
             {
                 std::cout << "Error renaming file." << std::endl;
             }
@@ -183,7 +183,7 @@ void User::editProfile()
     replaceSpacesWithDashes(password);
     rot13algorithm(password);
 
-    std::ifstream fp("../data/members.csv");
+    std::ifstream fp("data/members.csv");
     if (!fp.is_open())
     {
         std::cout << "Error, the file doesnot exist" << std::endl;

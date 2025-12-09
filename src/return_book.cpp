@@ -53,7 +53,7 @@ void User::returnBook()
     replaceSpacesWithDashes(password);
     rot13algorithm(password);
 
-    std::ifstream fp("../data/members.csv");
+    std::ifstream fp("data/members.csv");
     if (!fp.is_open())
     {
         std::cout << "Error, the file doesnot exist" << std::endl;

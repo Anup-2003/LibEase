@@ -1,0 +1,37 @@
+# Build files and executables
+*.exe
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+
+# CMake build files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+build.ninja
+.ninja_deps
+.ninja_log
+*.cmake
+
+# IDE and editor files
+.vscode/
+.vs/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Directories
+bin/
+obj/
+build/
+out/
+
+# Temporary files
+*.tmp
+*.temp
+temp.csv
+data/temp.csv
